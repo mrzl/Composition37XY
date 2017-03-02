@@ -217,6 +217,7 @@ void parseRobotSetup(char * cmd)
       roboSetup.data.width = atoi(str+1);
     }else if(str[0]=='S'){
       roboSetup.data.speed = atoi(str+1);
+      stepAuxDelay = roboSetup.data.speed;
     }
   }
   syncRobotSetup();
@@ -324,7 +325,7 @@ void initRobotSetup()
     roboSetup.data.width = WIDTH;
     roboSetup.data.height = HEIGHT;
     roboSetup.data.motorSwitch = 0;
-    roboSetup.data.speed = 80;
+    roboSetup.data.speed = 40;
     roboSetup.data.penUpPos = 160;
     roboSetup.data.penDownPos = 90;
     syncRobotSetup();
